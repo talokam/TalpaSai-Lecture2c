@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cmsc4373-talpa-webapps",
+  "private_key_id": "8d7232fae885e564fd07de16d9d1392b4fff2db5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDQd+coWKhlSy4l\nndamn2WwecnnHIDYl8sK5aQZArzoeeyZDt2QrVVID7ZFe8QnNGJSaR6wVz19I8Qc\nXMJltkdNJZVb79db4BdOYxX9Ts//NSx9AoF2j1tUjfqZdZ9BNods5JeluB59sCxm\nn7TIpnKFWZGyPzgcfAue+xy9WBAFCTOQmczDXkzsl9ZyShykwBC8HWeAGq5gdS7a\nathhOY+z0Jij2kHTs9Bk9gpr5rnkbUT2dYy17X+ZrXscj/fSiQqyVJUdiO0LYCuF\n9UWUD9A05FUTdCssuI23z2TZjHZ03w/aS+LHs0RDW51/fQWhOXBOiiGeMxFVB/Eo\ncIGtCLrpAgMBAAECggEADRWxjyE9dJoq69aD3hJ8Lf7+8sAhwDaK2oS+b4lx9P+O\nH69EreuLQkomLSdPEQzjLPwHHpdjNyMTEJqr4vl1cTyuKsablFs060kh3LPhL0oV\noEUTfi8SUvTUaWRuGghDqMySTicH1ujDaK+Wh8+WuZL9J5x7N6J7kj99ts67tq0X\nq/jh/pIKXDj3ScAP0VE+lsCVqD+547vjUvsUVSgkbDn+hqrbYZvJWwiTsVkgsXHt\nirNvqNUaC2S8WpfZUfXANEdq+ngWdxPDQn9Fdlb3CyxhQvbgRFHVdZsxewAn0CDK\nz907G5vEOk8Hl0t9lJ7xTNxgP1Ql+jQHG7s6f6d0WQKBgQDqtjoFY1sOHB/vozU5\nXyDpiG4T/RCjKYokcqe5ihw+RH/FPIfnVW5uVe9ace00trPaMcUqbdVNw8evutZr\nj9k9xVvmZBPHaVwDstTRzx7N/QE6vWM7bMWwAm+9Hkgjzact+8u//Kld0UPL8wnH\nM6/nHPRLAralsqoVuRfZP97kTQKBgQDjYFRkXQ3sPpJB0BYwws0+SnudhMIHw1UF\njymRxaDYTeazb7MP8F3nz50f0NlfrZOkS7UPZnLQsDqCw+LwYD5WZiI1MDI342j8\nJryBu+QSPCeoZS40CiAfvhuotxa3hFxS+Es9GNbQ8GmJxcNA6QoV2uHZvMmqQEEV\n6zvEWIEvDQKBgQDiW0OxlpRmEzGphpj574hqMK0YkeLNuG4FoJ2pDk0WsDEZIrte\nmsGZnz7q1xyQzfK952ni9XHVQY7/Jw1LRruYGxH6K2H32uBmoL0mar2mou3gnG1r\nDgfJK1Bf7yhbfyZP7podWaptVDgyJP21I1/tX7sp7EABpUDrGkqptjNbsQKBgAJk\n1z6fRDBCkGOk/zbQNjz7p8WGykwuoEyIr1VbkU/1sgIdoPMAAt0X8H2PQ1qghzdp\nnKRm3bqYwGT0DwWc3csnFCEfOsgf2tEcz0tGYSZX/8rkFdJycNgktkHWe6S+/gHZ\nn2ErS8ezYEkVDfM3AOYuAca7GBx0xLqoWV69185ZAoGBANtjxl3zCz4uqr/er3vb\nmjVdf1CGgYW7KxDlwnZVu2TjLtC8DhKkmRYrMh/MrpAh4YudXMKuTEZmilqNJvB/\n06zWjC/EmJfe/uiekQ4a8ifZIbCFv72OynUrfUJQUzXkA1H8TC81+Rh0XoFrPDYD\nNG4/+STMc+Jl4k4dHqV/+/uN\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-41b0a@cmsc4373-talpa-webapps.iam.gserviceaccount.com",
+  "client_id": "104823315457330247354",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-41b0a%40cmsc4373-talpa-webapps.iam.gserviceaccount.com"
+}
