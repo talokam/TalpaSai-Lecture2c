@@ -3,6 +3,7 @@ import * as FirebaseAuth from './controller/firebase_auth.js';
 import * as Home_page from './viewpage/home_page.js';
 import * as UsersPage from './viewpage/users_page.js';
 import * as EditProduct from './controller/edit_product.js';
+import * as SearchPage from './viewpage/search_page.js';
 
 window.onload = () => {
     const pathname = window.location.pathname;
@@ -26,3 +27,5 @@ FirebaseAuth.addEventListeners();
 Home_page.addEventListeners();
 UsersPage.addEventListeners();
 EditProduct.addEventListeners();
+SearchPage.addEventListeners();
+Home_page.home_pageSorting();

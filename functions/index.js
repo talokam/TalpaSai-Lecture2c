@@ -38,7 +38,7 @@ exports.cfn_getProductList = functions.https.onCall(async (data, context) => {
     try{
         let products = [];
         const snapShot = await admin.firestore().collection(Constants.COLLECTION_NAMES.PRODUCTS)
-                                .orderBy('name')
+                                .orderBy('name','desc')
                                 .get();
         snapShot.forEach(doc => {
             const{name, price, summary, imageName, imageURL} = doc.data();
@@ -155,5 +155,54 @@ exports.cfn_deleteUser = functions.https.onCall(async (uid,context) => {
     } catch(e){
         if (Constants.DEV) console.log(e);
         throw new functions.https.HttpsError('internal',`deleteUser failed: ${JSON.stringify(e)}`);
+    }
+});
+//This is my Index Function for Searching Product - Talpa Sai Alokam
+exports.cfn_searchProductList = functions.https.onCall(async (data, context) => {
+    if(!authorized(context.auth.token.email)){
+        if(Constants.DEV) console.log(e);
+        throw new functions.HttpsError('permission-denied','Only admin may invoke searchProductList function');
+    }
+    try{
+        let products = [];
+        const snapShot = await admin.firestore().collection(Constants.COLLECTION_NAMES.PRODUCTS)
+                                .orderBy('name')
+                                .get();
+        snapShot.forEach(doc => {            
+            const{name, price, summary, imageName, imageURL} = doc.data();
+            const p = {name, price, summary, imageName, imageURL};
+            if(p.name.toLowerCase().indexOf(data) != -1)
+            {
+                p.docId = doc.id;
+                products.push(p);
+            }
+        })
+        return products;
+    }catch(e){
+        if(Constants.DEV) console.log(e);
+        throw new functions.https.HttpsError('internal',`Only admin may invoke searchProductList failed: ${JSON.stringify(e)}`);
+    }
+});
+//This is my Index Function for Sorting Product in Descending Order - Talpa Sai Alokam
+exports.cfn_getProductListByPrice = functions.https.onCall(async (data, context) => {
+    if(!authorized(context.auth.token.email)){
+        if(Constants.DEV) console.log(e);
+        throw new functions.HttpsError('permission-denied','Only admin may invoke getProductList function');
+    }
+    try{
+        let products = [];
+        const snapShot = await admin.firestore().collection(Constants.COLLECTION_NAMES.PRODUCTS)
+                                .orderBy('price','desc')
+                                .get();
+        snapShot.forEach(doc => {
+            const{name, price, summary, imageName, imageURL} = doc.data();
+            const p = {name, price, summary, imageName, imageURL};
+            p.docId = doc.id;
+            products.push(p);
+        })
+        return products;
+    }catch(e){
+        if(Constants.DEV) console.log(e);
+        throw new functions.https.HttpsError('internal',`Only admin may invoke getProductList failed: ${JSON.stringify(e)}`);
     }
 });

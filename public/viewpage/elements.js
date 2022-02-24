@@ -7,6 +7,7 @@ export const menuHome = document.getElementById('menu-home');
 export const menuUsers = document.getElementById('menu-users');
 
 //Form
+export const formSearch = document.getElementById('form-search');
 export const formSignIn = document.getElementById('form-signin');
 export const formAddProduct = {
     form: document.getElementById('form-add-product'),
@@ -28,3 +29,7 @@ export const modalInfobox = {
 
 export const modalAddProduct = new bootstrap.Modal(document.getElementById('modal-add-product'),{backdrop:'static'});
 export const modalEditProduct = new bootstrap.Modal(document.getElementById('modal-edit-product'),{backdrop:'static'});
+
+//Dropdown
+export const dropdown_sorter_name = document.getElementById('dropdown-item-name');
+export const dropdown_sorter_price = document.getElementById('dropdown-item-price');

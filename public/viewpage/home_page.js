@@ -122,7 +122,7 @@ async function addNewProduct(e){
     Util.enableButton(button, label);
 }
 
-function buildProductCard(product){
+export function buildProductCard(product){
     return `
     <div id="card-${product.docId}" class="card d-inline-flex" style="width: 18rem;">
         <img src="${product.imageURL}" class="card-img-top">
@@ -140,4 +140,95 @@ function buildProductCard(product){
         </div>
     </div>
     `;
+}
+
+export function home_pageSorting() {
+    //This is my Frontend Function for Sorting Product by name- Talpa Sai Alokam
+    Elements.dropdown_sorter_name.addEventListener('click', async e => {
+        e.preventDefault();
+        
+        let products;
+        products = await CloudFunctions.getProductList();
+
+        let html = `
+        <div>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-add-product">
+                +Add Product
+            </button>
+        </div>
+        `;
+
+        products.forEach(p => {
+            html += buildProductCard(p);
+        });
+
+        Elements.root.innerHTML = html;
+
+        const forms = document.getElementsByClassName('form-edit-delete-product');
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].addEventListener('submit', async e => {
+                e.preventDefault();
+                const buttons = e.target.getElementsByTagName('button');
+                const submitter = e.target.submitter;
+                if (submitter == 'EDIT') {
+                    const label = Util.disableButton(buttons[0]);
+                    await EditProduct.edit_product(e.target.docId.value);
+                    //await Util.sleep(1000);
+                    Util.enableButton(buttons[0], label);
+                } else if (submitter == 'DELETE') {
+                    const label = Util.disableButton(buttons[1]);
+                    await EditProduct.delete_product(e.target.docId.value, e.target.imageName.value);
+                    //await Util.sleep(1000);
+                    Util.enableButton(buttons[1], label);
+                }
+                else {
+                    console.log('No suc submitter', submitter);
+                }
+            })
+        }
+    });
+    //This is my Frontend Function for Sorting Product by price - Talpa Sai Alokam
+    Elements.dropdown_sorter_price.addEventListener('click', async e => {
+        e.preventDefault();
+        
+        let products;
+        products = await CloudFunctions.getProductListByPrice();
+
+        let html = `
+        <div>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-add-product">
+                +Add Product
+            </button>
+        </div>
+        `;
+
+        products.forEach(p => {
+            html += buildProductCard(p);
+        });
+
+        Elements.root.innerHTML = html;
+
+        const forms = document.getElementsByClassName('form-edit-delete-product');
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].addEventListener('submit', async e => {
+                e.preventDefault();
+                const buttons = e.target.getElementsByTagName('button');
+                const submitter = e.target.submitter;
+                if (submitter == 'EDIT') {
+                    const label = Util.disableButton(buttons[0]);
+                    await EditProduct.edit_product(e.target.docId.value);
+                    //await Util.sleep(1000);
+                    Util.enableButton(buttons[0], label);
+                } else if (submitter == 'DELETE') {
+                    const label = Util.disableButton(buttons[1]);
+                    await EditProduct.delete_product(e.target.docId.value, e.target.imageName.value);
+                    //await Util.sleep(1000);
+                    Util.enableButton(buttons[1], label);
+                }
+                else {
+                    console.log('No suc submitter', submitter);
+                }
+            })
+        }
+    });
 }
